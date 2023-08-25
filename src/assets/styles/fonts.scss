@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'sf-pro-display';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('./fonts/sf-regular.woff') format('woff');
+  }
+$primary-fonts: sf-pro-display ,Helvetica Neue,sans-serif;

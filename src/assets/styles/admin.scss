@@ -1,0 +1,285 @@
+.kingsolomon {
+  margin: 24px 94px;
+  display: block;
+  text-transform: uppercase;
+}
+.login {
+  padding: 30px;
+  width: 500px;
+  & h2 {
+    margin: 10px auto;
+    text-transform: uppercase;
+  }
+  & form {
+    & label {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+}
+
+.admin-main {
+  background: #fff;
+  max-width: 1050px;
+  width: fit-content;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: auto;
+  box-shadow: 7px 10px 19px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  font-family: $primary-fonts;
+  & .grid-js {
+    margin: 0 21px;
+  }
+  & .inline-message {
+    display: block;
+    margin: 25px 0 0 0;
+    font-size: 14px;
+    border: 1px solid #0000001c;
+    background: #d6ffd1;
+    width: max-content;
+    font-family: inherit;
+    padding: 6px 14px;
+    color: black;
+    border-radius: 4px;
+    &.alert {
+      background: #fff2d1;
+    }
+    &.danger {
+      background: #ffd1d1;
+    }
+  }
+  & form {
+    & input[type="text"],
+    & input[type="password"],
+    & input[type="select"] {
+      width: 100%;
+      height: 39px;
+      font-size: 16px;
+      font-family: $primary-fonts;
+      display: block;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #81b9ff;
+      padding: 0 8px;
+      font-weight: 300;
+    }
+    & input[type="submit"],
+    & button {
+      width: 200px;
+      height: 44px;
+      background: black;
+      border-radius: 35px;
+      border: 2px solid #10101038;
+      margin: 10px 0;
+      margin-top: 13px;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white;
+      font-family: inherit;
+      & img {
+        height: 100%;
+        padding: 4px;
+      }
+    }
+  }
+  & .new-token-above {
+    background: #ffe0e0;
+    margin: 7px 25px;
+    padding: 3px 16px;
+    border-radius: 5px;
+    box-shadow: 4px 6px 8px 0px #00000021;
+    & summary {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    & form {
+      display: flex;
+      align-items: center;
+    }
+    & input {
+      width: 205px !important;
+      margin-right: 13px;
+      background: none;
+      border-bottom-color: #00000085 !important;
+    }
+    & button {
+      cursor: pointer;
+      margin: 10px 8px 9px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      width: 143px;
+      & svg {
+        width: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+  & .item-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 4px;
+    & svg {
+      width: 20px;
+      color: #ff007d;
+    }
+    &.wrench {
+      & svg {
+        color: dodgerblue;
+      }
+    }
+  }
+  & .admin-left {
+    background: #ffe0e0;
+    padding: 10px 0;
+    width: 227px;
+    min-height: 100%;
+
+    & button {
+      width: 100%;
+      height: 33px;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 3px;
+      border: none;
+      background: none;
+      padding: 5px 0;
+      cursor: pointer;
+      font-family: $primary-fonts;
+      transition: 400ms;
+      &:hover,
+      &.active {
+        background: #ffcaca;
+      }
+      & svg {
+        height: 94%;
+        margin-right: 12px;
+        margin-left: 9px;
+      }
+    }
+  }
+  & .admin-right {
+    width: 800px;
+    & .token-list {
+      margin: 10px 24px 20px 24px;
+      & h3 {
+        text-transform: uppercase;
+      }
+      & .token-item {
+        width: 100%;
+        min-height: 34px;
+        padding: 4px 10px;
+        position: relative;
+        display: grid;
+        grid-auto-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        grid-auto-flow: column;
+        & .progress {
+          background: #0014ff38;
+          height: 20px;
+          border-radius: 35px;
+        }
+
+        & .c4-icon {
+          display: flex;
+          align-items: center;
+          & svg {
+            width: 20px;
+            margin-right: 6px;
+          }
+        }
+
+        & span {
+          display: inline-block;
+          margin: 0 10px;
+        }
+      }
+    }
+    & .ckk3 {
+      margin: 20px 22px 25px 27px;
+    }
+    & .block-cont {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: space-around;
+    }
+    & .count-block {
+      margin: 26px 36px 35px 36px;
+      display: inline-block;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 4px 4px 8px 1px #00000021;
+      text-align: center;
+      position: relative;
+      & .ck3-32 {
+        z-index: 1;
+        position: relative;
+      }
+      & span.counter {
+        font-size: 50px;
+        display: block;
+        text-align: center;
+        font-weight: 400;
+      }
+      & span.visitors {
+        font-size: 17px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      & .percent-bubble {
+        position: absolute;
+        top: -39px;
+        border: 2px solid #0081ff30;
+        background: #efebff;
+        width: 50px;
+        border-radius: 5px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: black;
+        &::after {
+          content: "";
+          width: 9px;
+          height: 9px;
+          background: #efebff;
+          position: absolute;
+          bottom: -7px;
+          border-bottom: 2px solid #0081ff30;
+          transform: rotate(45deg);
+          border-right: 2px solid #0081ff30;
+        }
+      }
+      & .progress-wrap {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+
+        & span {
+          margin-left: 8px;
+        }
+      }
+      & .progress {
+        background: #2e00ff14;
+        height: 100%;
+      }
+    }
+  }
+}

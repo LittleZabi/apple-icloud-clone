@@ -1,8 +1,65 @@
 @font-face {
-    font-family: 'sf-pro-display';
-    font-style: normal;
-    font-weight: 100;
-    font-display: swap;
-    src: url('./fonts/sf-regular.woff') format('woff');
-  }
-$primary-fonts: sf-pro-display ,Helvetica Neue,sans-serif;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Heavy.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("./fonts/SF-Pro-Display-Ultralight.woff") format("woff");
+}
+$primary-fonts: SF Pro Display, Helvetica Neue, sans-serif;

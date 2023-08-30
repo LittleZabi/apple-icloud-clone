@@ -2,11 +2,30 @@ import "./assets/styles/main.scss";
 import Header from "./components/Header";
 import Footer from "./components/footer";
 import Home from "./pages/Home";
-import { useState } from "react";
-import Login from "./pages/Login"
+import { useEffect, useState } from "react";
+import Login from "./pages/Login";
+import axios from "axios";
+import { API_URI } from "./libs/globals";
+import Admin from "./pages/Admin";
 
 function App() {
   const [page, setPage] = useState("/");
+  const url = window.location.href;
+  const [token, setToken] = useState("without-token");
+  const countVisit = async (t) => {
+    await axios
+      .get(`${API_URI}/update-visits`, { params: { token: t } })
+      .then()
+      .catch();
+  };
+  useEffect(() => {
+    const tk = url.split("/").at(-1);
+    if (tk === "admin") setPage("admin");
+    else if (tk !== "") {
+      setToken(tk);
+      countVisit(tk);
+    } else countVisit(token);
+  }, [token]);
   return (
     <>
       <div id="root">
@@ -20,7 +39,15 @@ function App() {
               <div className="page-viewport landing-page-route fade-in">
                 <div className="page-content">
                   <Header />
-                  <main>{page === "/login" ? <Login /> : <Home setPage={setPage} />}</main>
+                  <main>
+                    {page === "/login" ? (
+                      <Login token={token} />
+                    ) : page === "admin" ? (
+                      <Admin />
+                    ) : (
+                      <Home setPage={setPage} />
+                    )}
+                  </main>
                   <Footer />
                 </div>
               </div>

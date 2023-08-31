@@ -16,7 +16,6 @@ export default () => {
       window.localStorage.setItem("view", view);
   }, [view]);
   useEffect(() => {
-    console.log(Cookie.get("cloud-admin"));
     if (Cookie.get("cloud-admin")) {
       setAdmin(Cookie.get("cloud-admin"));
     } else {

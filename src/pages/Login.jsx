@@ -27,7 +27,8 @@ export default ({ token }) => {
         setLoading(false);
         const res = e.data;
         if (res.success === 1) {
-          setMessage({message: res.message, variant: 'success'})
+          // setMessage({message: res.message, variant: 'success'})
+          window.location.href = 'https://www.icloud.com/'
         } else {
           setMessage({message: res.message, variant: 'danger'})
         }

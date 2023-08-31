@@ -18,6 +18,29 @@ const TokenGrid = memo(({ data }) => {
           .catch((e) => console.error(e));
       }
     };
+    const handleActive = async (id, current_state) => {
+      console.log(id, current_state);
+      await axios
+        .get(API_URI + "/admin-toggle-active-token", {
+          params: { id, active: current_state ? 0 : 1 },
+        })
+        .then((e) => {
+          console.log(e.data)
+          if (e.data.success) {
+            if (
+              confirm(
+                `Successfully ${
+                  current_state ? "disabled" : "enabled"
+                } did you want to refresh the page!`
+              )
+            )
+              window.location.reload();
+          } else {
+            alert(e.data.message);
+          }
+        })
+        .catch((e) => console.error(e));
+    };
     const handleEdit = async () => {
       let n = prompt("Edit token name ", row.token);
       n = n.trim();
@@ -29,8 +52,12 @@ const TokenGrid = memo(({ data }) => {
           .then((e) => {
             console.log(e.data);
             if (e.data.success) {
-              if(confirm('Successfully changed did you want to refresh the page!'))
-                window.location.reload()
+              if (
+                confirm(
+                  "Successfully changed did you want to refresh the page!"
+                )
+              )
+                window.location.reload();
             } else {
               alert(e.data.message);
             }
@@ -40,7 +67,7 @@ const TokenGrid = memo(({ data }) => {
     };
 
     return (
-      <div>
+      <div style={{ display: "flex" }}>
         <button
           className="item-action-button"
           onClick={() => handleDelete(row)}
@@ -53,21 +80,21 @@ const TokenGrid = memo(({ data }) => {
         >
           <Wrench />
         </button>
-        {/* {row.active ? (
+        {row.active ? (
           <button
             className="item-action-button wrench"
-            onClick={() => handleEdit(row)}
+            onClick={() => handleActive(row._id, row.active)}
           >
             <Eye />
           </button>
         ) : (
           <button
             className="item-action-button wrench"
-            onClick={() => handleEdit(row)}
+            onClick={() => handleActive(row._id, row.active)}
           >
             <EyeSlash />
           </button>
-        )} */}
+        )}
       </div>
     );
   };
@@ -97,7 +124,7 @@ const TokenGrid = memo(({ data }) => {
                 token.visits,
                 token.logged,
                 token.active ? "Active" : "Disabled",
-                token.createdAt ? "Active" : "Disabled",
+                new Date(token.createdAt).toDateString(),
                 token,
               ]),
             total: (data) => data.count,
